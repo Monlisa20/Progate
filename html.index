@@ -1,225 +1,408 @@
-<!DOCTYPE html>
-<html lang="en">
+@keyframes image-animation {
+  0% { transform: translateY(10px); }
+  100% { transform: translateY(-10px); }
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <title>Progate-A29</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
+@keyframes fa-animation {
+  0% { transform: translateY(5px); }
+  100% { transform: translateY(-5px); }
+}
 
-<body>
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none !important;
+}
 
-    <!-- Header Content -->
-    <header>
-        <!-- Navigasi -->
-        <div class="container">
-            <div class="header-left">
-                <p class="logo">
-                    <a href="#landing">Progate-A29</a>
-                </p>
-            </div>
-            <div class="header-right">
-                <input type="checkbox" class="mobile-only" id="menu-toggle">
-                <i class="fas fa-bars fa-fw hamburger mobile-only"></i>
-                <ul class="scroll">
-                    <a href="#lesson">
-                        <li>Materi</li>
-                    </a>
-                    <a href="#profile">
-                        <li>Anggota Tim</li>
-                    </a>
-                    <a href="#organizer">
-                        <li>Penyelenggara</li>
-                    </a>
-                </ul>
-            </div>
-        </div>
-        <!-- End Navigasi -->
-    </header>
-    <!-- End Header Content -->
+html {
+  scroll-behavior: smooth;
+  position:relative;
+  min-height: 100%;
+}
 
-    <!-- Main Content -->
-    <main>
-        <!-- Landing -->
-        <section id="landing">
-            <div class="container">
-                <div class="people">
-                    <img src="images/progressive_app.png" alt="Image hero">
-                </div>
-                <div class="intro">
-                    <h1>Progate-A29</h1>
-                    <p> Selamat datang di halaman proyek tim <strong>A29</strong>.
-                        Program Coding Experience Bootcamp <a
-                            href="https://cfds.fisipol.ugm.ac.id/page/30/coding-experience-bootcamp-cfds-ugm-progate">CfDS
-                            UGM</a>
-                        x <a href="https://progate.com/">Progate</a> merupakan program yang memberikan kesempatan
-                        untuk dapat belajar coding dan pemrograman secara gratis selama 8 minggu.
-                    </p>
-                    <a onclick="scrollLink('lesson')" class="button" title="Materi">Materi</a>
-                </div>
-            </div>
-        </section>
-        <!-- End Landing -->
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1.618em;
+  color: #424242;
+}
 
-        <!-- Lesson -->
-        <section id="lesson">
-            <div class="container">
-                <h2>Materi Coding Experience Bootcamp CfDS UGM x Progate</h2>
-                <div class="base">
-                    <div class="html">
-                        <i class="fa fa-code fa-fw"></i>
-                        <p><strong>HTML</strong> adalah singkatan dari HyperText Markup Language,
-                            yaitu bahasa pemrograman standar yang digunakan untuk membuat sebuah
-                            halaman web.
-                        </p>
-                    </div>
-                </div>
-                <div class="base">
-                    <div class="css">
-                        <i class="fab fa-css3 fa-fw"></i>
-                        <p><strong>CSS</strong> adalah kepanjangan dari Cascading Style Sheet
-                            yang berfungsi untuk mengatur tampilan elemen yang tertulis dalam
-                            bahasa markup.
-                        </p>
-                    </div>
-                </div>
-                <div class="base">
-                    <div class="js">
-                        <i class="fab fa-node-js fa-fw"></i>
-                        <p><strong>JavaScript</strong> adalah sebuah bahasa komputer yang
-                            digunakan pada website agar website tersebut menjadi lebih
-                            interaktif dan dinamis.
-                        </p>
-                    </div>
-                </div>
-                <div class="base">
-                    <div class="sql">
-                        <i class="fa fa-database fa-fw"></i>
-                        <p><strong>SQL</strong> (Structured Query Language) adalah bahasa
-                            pemrograman khusus yang digunakan untuk memanajemen data dalam RDBMS.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Lesson -->
+a {
+  cursor: pointer;
+  transition: .25s all;
+}
 
-        <!-- Profile -->
-        <section id="profile">
-            <div class="container">
-                <h2>Anggota Tim</h2>
-                <div class="base">
-                    <div class="card">
-                        <img src="images/logo.png" alt="image" title="Wahid Ari">
-                        <h3>Wahid Ari</h3>
-                        <p class="testimonial">pengguna akan mempelajari dasar-dasar 4 bahasa pemrograman yang populer
-                            yaitu HTML & CSS, Javascript, SQL dan Node.js</p>
-                        <a href="https://github.com/wahidari" class="button">
-                            <i class="fab fa-github fa-fw"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-                <div class="base">
-                    <div class="card">
-                        <img src="images/logo.png" alt="image" title="Wahid Ari">
-                        <h3>Wahid Ari</h3>
-                        <p class="testimonial">pengguna akan mempelajari dasar-dasar 4 bahasa pemrograman yang populer
-                            yaitu HTML & CSS,
-                            Javascript, SQL dan Node.js</p>
-                        <a href="https://github.com/wahidari" class="button">
-                            <i class="fab fa-github fa-fw"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-                <div class="base">
-                    <div class="card">
-                        <img src="images/logo.png" alt="image" title="Wahid Ari">
-                        <h3>Wahid Ari</h3>
-                        <p class="testimonial">pengguna akan mempelajari dasar-dasar 4 bahasa pemrograman yang populer
-                            yaitu HTML & CSS,
-                            Javascript, SQL dan Node.js</p>
-                        <a href="https://github.com/wahidari" class="button">
-                            <i class="fab fa-github fa-fw"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-                <div class="base">
-                    <div class="card">
-                        <img src="images/logo.png" alt="image" title="Wahid Ari">
-                        <h3>Wahid Ari</h3>
-                        <p class="testimonial">pengguna akan mempelajari dasar-dasar 4 bahasa pemrograman yang populer
-                            yaitu HTML & CSS,
-                            Javascript, SQL dan Node.js</p>
-                        <a href="https://github.com/wahidari" class="button">
-                            <i class="fab fa-github fa-fw"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-                <div class="base">
-                    <div class="card">
-                        <img src="images/logo.png" alt="image" title="Wahid Ari">
-                        <h3>Wahid Ari</h3>
-                        <p class="testimonial">pengguna akan mempelajari dasar-dasar 4 bahasa pemrograman yang populer
-                            yaitu HTML & CSS,
-                            Javascript, SQL dan Node.js</p>
-                        <a href="https://github.com/wahidari" class="button">
-                            <i class="fab fa-github fa-fw"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Profile -->
+img {
+  width: 100%;
+}
 
-        <!-- Organizer -->
-        <section id="organizer">
-            <div class="container">
-                <h2>Program Coding Experience Bootcamp ini diselenggarakan oleh :</h2>
-                <a href="https://progate.com" target="_blank">
-                    <img src="images/progate.png" alt="Progate" title="Progate Indonesia">
-                </a>
-                <a href="https://cfds.fisipol.ugm.ac.id/home" target="_blank">
-                    <img src="images/cfds.png" alt="Progate" title="CfDS UGM">
-                </a>
-            </div>
-        </section>
-        <!-- End Organizer -->
-    </main>
-    <!-- End Main Content -->
+.container {
+  display: inline-block;
+  margin: 0 auto  ;
+}
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>
-                Copyright <span>&copy;</span> <a href="https://github.com/wahidari">Progate-A29</a> 2020
-            </p>
-        </div>
-    </footer>
-    <!-- End Footer -->
+.container h2 {
+  margin: 0 auto;
+  padding: 0 30px 50px;
+  font-size: 2.5em;
+  line-height: 1.618em;
+}
 
-    <!-- back to top -->
-    <a onclick="scrollLink('landing')" title="Back to Top">
-        <div id="to-top">
-            <i class="fas fa-chevron-up fa-fw"></i>
-        </div>
-    </a>
+.non-mobile-only {
+  display: none !important;
+}
 
-    <script src="js/script.js"></script>
-  <div class="footer"></div>
-    <div class="footer-logo>progate"></div>
-        <div class="footer-list">
-          <ul>
-            <li>About Us</li>
-            <li>Media Center</li>
-            <li>Carers</li>
-            <li>Contact Us</li>
-            <li>FAQ</li>
-          </ul>
-        </div>
-</body>
+.base {
+  display: inline-block;
+  padding: 15px;
+}
 
-</html>
+#to-top {
+  position: fixed;
+  bottom: 40px;
+  right: -70px;
+  width: 2em;
+  line-height: 2em;
+  font-size: 1em;
+  text-align: center;
+  background: #2ebf91;
+  color: #fff;
+  border-radius: 50%;
+}
+
+#to-top:hover {
+  background: #16a085;
+}
+
+
+/* bagian header */
+header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  line-height: 0;
+  color: #fff;
+  background: #1abc9c;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+header .container {
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 30px;
+  line-height: 70px;
+}
+
+header .logo {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+header .header-left {
+  float: left;
+}
+
+header .header-left a {
+  color: #fff;
+}
+
+header .header-right {
+  float: right;
+  text-align: right;
+}
+
+header #menu-toggle {
+  position: absolute;
+  display: block;
+  width: 1.75em;
+  height: 1.75em;
+  top: 15px;
+  right: 30px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 50;
+  -webkit-touch-callout: none;
+}
+
+header #menu-toggle:checked ~ .scroll {
+  top: 70px;
+  left: 0;
+}
+
+header .hamburger {
+  margin-right: 30px;
+  font-size: 1.5em;
+}
+
+header .scroll {
+  position: absolute;
+  top: -280px;
+  left: 0;
+  z-index: 20;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: .25s all;
+  background: #1abc9c;
+}
+
+header .header-right a {
+  display: block;
+  margin: 0;
+  font-weight: 700;
+  padding: 0 12px;
+  line-height: 60px;
+  text-align: left;
+  color: #fff;
+}
+
+header .header-right a:hover {
+  background: #16a085;
+}
+
+main {
+    min-height: 100%;
+}
+
+
+/* bagian landing di sini */
+#landing {
+  padding-top: 20vh;
+  height: 100vh;
+  line-height: 100vh;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+#landing .intro {
+  float: left;
+  margin: 0 30px;
+  line-height: 1.618em;
+}
+
+#landing h1 {
+  margin: 0 0 50px;
+  font-size: 2em;
+}
+
+#landing p {
+  margin: 0 0 50px;
+}
+
+#landing .button {
+  padding: 10px 15px;
+  background: #2ebf91;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#landing .button:hover {
+  padding: 10px 15px;
+  background: #16a085;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#landing .people {
+  float: right;
+  margin-right: 15px;
+  margin-top: -50px;
+  width: 400px;
+  height: auto;
+  animation: image-animation 2s ease-in-out infinite alternate-reverse both;
+}
+
+#landing a {
+  text-decoration: none;
+  color: #1abc9c;
+}
+
+#landing a:hover {
+  border-bottom: 1px solid #16a085;
+  padding-bottom: .1em;
+}
+
+
+/* bagian lesson di sini */
+#lesson {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#lesson h2 {
+  padding: 0 30px 30px;
+  font-size: 1.7em;
+}
+
+#lesson .fa-fw {
+  font-size: 80px;
+  line-height: 100px;
+  transition: .25s all;
+}
+
+#lesson .html,
+#lesson .css,
+#lesson .js,
+#lesson .sql {
+  display: inline-block;
+  padding: 30px 30px 15px;
+  vertical-align: top;
+  border-radius: 15px;
+  min-height: 300px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#lesson .html:hover .fa-fw,
+#lesson .css:hover .fa-fw,
+#lesson .js:hover .fa-fw,
+#lesson .sql:hover .fa-fw {
+  font-size: 100px;
+}
+
+.fa-code {
+  color: #ff5722;
+  animation: fa-animation 2s ease-in-out infinite alternate-reverse both;
+}
+
+.fa-css3 {
+  color: #2f80ed;
+  animation: fa-animation 2s ease-in-out infinite alternate-reverse both;
+}
+
+.fa-node-js {
+  color: #fcbf1e;
+  animation: fa-animation 2s ease-in-out infinite alternate-reverse both;
+}
+
+.fa-database {
+  color: #16a085;
+  animation: fa-animation 2s ease-in-out infinite alternate-reverse both;
+}
+
+
+/* bagian profil di sini */
+#profile {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#profile .card {
+  display: inline-block;
+  padding: 20px;
+  vertical-align: top;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#profile img {
+  width: 80%;
+  max-width: 150px;
+  border-radius: 50%;
+  animation: fa-animation 2s ease-in-out infinite alternate-reverse both;
+}
+
+#profile h2 {
+  padding: 0 30px 30px;
+  font-size: 1.7em;
+}
+
+#profile h3 {
+  margin: 0px;
+}
+#profile .card .testimonial {
+  font-style: italic;
+}
+
+#profile .button {
+  display: inline-block;
+  padding: 4px 4px;
+  background: #222;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#profile .button:hover {
+  background: #444;
+}
+
+#profile .button:active {
+  margin: 20px 0 10px;
+  box-shadow: none;
+}
+
+
+/* bagian organizer di sini */
+#organizer {
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+#organizer h2 {
+  font-size: 1.5em;
+}
+
+#organizer img {
+  display: block;
+  width: auto;
+  max-width: 80%;
+  max-height: 100px;
+  margin: 0 auto;
+  transition: .25s all;
+}
+
+#organizer img:hover {
+  filter: grayscale(0%);
+  animation: fa-animation 2s ease-in-out infinite alternate-reverse both;
+}
+
+
+/* bagian footer di sini */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  line-height: 0;
+  position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer .container {
+  width: 100%;
+  margin: 0;
+  padding: 0 30px;
+  line-height: 1.618em;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer a:hover {
+  color: #16a085;
+  border-bottom: 1px solid #16a085;
+  padding-bottom: .1em;
+}
+
+footer-logo {
+  font-size: 32px;
+  float: left;
+}
+
+footer-list {
+  float: right;
+}
+
+footer-list li {
+  padding-bottom: 20px;
+  color: #02ccba
+  float: right
